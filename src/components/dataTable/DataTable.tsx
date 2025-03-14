@@ -21,7 +21,7 @@ const DataTable = () => {
   }, []);
 
   const fetchProducts = async () => {
-    const res = await fetch("http://localhost:3000/api/products");
+    const res = await fetch("https://backend-server-mkzqlowyp-saifd227s-projects.vercel.app/api/products");
     const data = await res.json();
     setProducts(data);
   };
