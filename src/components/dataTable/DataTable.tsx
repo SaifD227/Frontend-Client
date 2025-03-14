@@ -32,10 +32,10 @@ const DataTable = () => {
   };
 
   const handleAdd = async () => {
-    const res = await fetch("https://backend-server-khaki-seven.vercel.app/api/products/api/products", {
+    const res = await fetch("https://backend-server-khaki-seven.vercel.app/api/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(newProduct),  
     });
     const data = await res.json();
     setProducts([...products, data]);
@@ -44,7 +44,7 @@ const DataTable = () => {
 
   const handleUpdate = async () => {
     if (!editingProduct) return;
-    await fetch(`https://backend-server-khaki-seven.vercel.app/api/products/api/products/${editingProduct._id}`, {
+    await fetch(`https://backend-server-khaki-seven.vercel.app/api/products/${editingProduct._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editingProduct),
