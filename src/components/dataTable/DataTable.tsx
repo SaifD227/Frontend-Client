@@ -21,18 +21,18 @@ const DataTable = () => {
   }, []);
 
   const fetchProducts = async () => {
-    const res = await fetch("https://backend-server-mkzqlowyp-saifd227s-projects.vercel.app/api/products");
+    const res = await fetch("https://backend-server-khaki-seven.vercel.app/api/products");
     const data = await res.json();
     setProducts(data);
   };
 
   const handleDelete = async (id: string) => {
-    await fetch(`https://backend-server-mkzqlowyp-saifd227s-projects.vercel.app/api/products/${id}`, { method: "DELETE" });
+    await fetch(`https://backend-server-khaki-seven.vercel.app/api/products/${id}`, { method: "DELETE" });
     setProducts(products.filter((product) => product._id !== id));
   };
 
   const handleAdd = async () => {
-    const res = await fetch("https://backend-server-mkzqlowyp-saifd227s-projects.vercel.app/api/products", {
+    const res = await fetch("https://backend-server-khaki-seven.vercel.app/api/products/api/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newProduct),
@@ -44,7 +44,7 @@ const DataTable = () => {
 
   const handleUpdate = async () => {
     if (!editingProduct) return;
-    await fetch(`https://backend-server-mkzqlowyp-saifd227s-projects.vercel.app/api/products/${editingProduct._id}`, {
+    await fetch(`https://backend-server-khaki-seven.vercel.app/api/products/api/products/${editingProduct._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editingProduct),
