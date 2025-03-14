@@ -24,7 +24,7 @@ const DataTable = () => {
     const res = await fetch("https://backend-server-khaki-seven.vercel.app/api/products");
     const data = await res.json();
     setProducts(data);
-  };
+  };                 
 
   const handleDelete = async (id: string) => {
     await fetch(`https://backend-server-khaki-seven.vercel.app/api/products/${id}`, { method: "DELETE" });
