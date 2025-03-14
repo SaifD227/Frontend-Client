@@ -27,12 +27,12 @@ const DataTable = () => {
   };
 
   const handleDelete = async (id: string) => {
-    await fetch(`http://localhost:3000/api/products/${id}`, { method: "DELETE" });
+    await fetch(`https://backend-server-mkzqlowyp-saifd227s-projects.vercel.app/api/products/${id}`, { method: "DELETE" });
     setProducts(products.filter((product) => product._id !== id));
   };
 
   const handleAdd = async () => {
-    const res = await fetch("http://localhost:3000/api/products", {
+    const res = await fetch("https://backend-server-mkzqlowyp-saifd227s-projects.vercel.app/api/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newProduct),
@@ -44,7 +44,7 @@ const DataTable = () => {
 
   const handleUpdate = async () => {
     if (!editingProduct) return;
-    await fetch(`http://localhost:3000/api/products/${editingProduct._id}`, {
+    await fetch(`https://backend-server-mkzqlowyp-saifd227s-projects.vercel.app/api/products/${editingProduct._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editingProduct),
